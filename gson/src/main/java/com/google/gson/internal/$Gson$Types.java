@@ -517,6 +517,8 @@ public final class $Gson$Types {
     @SuppressWarnings("serial")
     private final Type[] typeArguments;
 
+    private static final int CAPACITY = 30;
+
     public ParameterizedTypeImpl(Type ownerType, Type rawType, Type... typeArguments) {
       // TODO: Should this enforce that rawType is a Class? See JDK implementation of
       // the ParameterizedType interface and https://bugs.openjdk.org/browse/JDK-8250659
@@ -572,7 +574,7 @@ public final class $Gson$Types {
         return typeToString(rawType);
       }
 
-      StringBuilder stringBuilder = new StringBuilder(30 * (length + 1));
+      StringBuilder stringBuilder = new StringBuilder(CAPACITY  * (length + 1));
       stringBuilder
           .append(typeToString(rawType))
           .append("<")
