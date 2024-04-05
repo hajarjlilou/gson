@@ -28,7 +28,7 @@ public class BagOfPrimitives {
   public int intValue;
   public boolean booleanValue;
   public String stringValue;
-  
+
   public BagOfPrimitives(long longValue, int intValue, boolean booleanValue, String stringValue) {
     this.longValue = longValue;
     this.intValue = intValue;

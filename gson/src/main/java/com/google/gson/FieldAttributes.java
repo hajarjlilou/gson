@@ -19,8 +19,6 @@ package com.google.gson;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 /**
@@ -117,15 +115,6 @@ public final class FieldAttributes {
     return field.getAnnotation(annotation);
   }
 
-  /**
-   * Returns the annotations that are present on this field.
-   *
-   * @return an array of all the annotations set on the field
-   * @since 1.4
-   */
-  public Collection<Annotation> getAnnotations() {
-    return Arrays.asList(field.getAnnotations());
-  }
 
   /**
    * Returns {@code true} if the field is defined with the {@code modifier}.
