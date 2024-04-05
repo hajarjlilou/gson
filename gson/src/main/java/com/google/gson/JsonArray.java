@@ -67,7 +67,7 @@ public final class JsonArray extends JsonElement implements Iterable<JsonElement
     if (!elements.isEmpty()) {
       JsonArray result = new JsonArray(elements.size());
       for (JsonElement element : elements) {
-        result.add(element.deepCopy());
+        result.addJsonElement(element.deepCopy());
       }
       return result;
     }
@@ -119,7 +119,7 @@ public final class JsonArray extends JsonElement implements Iterable<JsonElement
    *
    * @param element the element that needs to be added to the array.
    */
-  public void addElement(JsonElement element) {
+  public void addJsonElement(JsonElement element) {
     if (element == null) {
       element = JsonNull.INSTANCE;
     }
