@@ -96,6 +96,8 @@ public final class JsonTreeWriter extends JsonWriter {
     }
   }
 
+
+
   @CanIgnoreReturnValue
   @Override
   public JsonWriter beginArray() throws IOException {
