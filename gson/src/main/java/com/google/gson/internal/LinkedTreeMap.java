@@ -672,7 +672,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     return new LinkedHashMap<>(this);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException {
+  private void readObject() throws IOException {
     // Don't permit directly deserializing this class; writeReplace() should have written a
     // replacement
     throw new InvalidObjectException("Deserialization is unsupported");
