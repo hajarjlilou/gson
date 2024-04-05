@@ -52,9 +52,11 @@ public class ISO8601Utils {
    */
   private static final TimeZone TIMEZONE_UTC = TimeZone.getTimeZone(UTC_ID);
 
-  //Déclarationdes nouvelles variables
+  //Déclarationdes nouvelles variables (nombre magique)
   private static final int MINUTES = 60;
   private static final int CONST = 1000;
+  private static final int MIN_SECOND = 59;
+  private static final int MAX_SECOND = 63;
   /*
   /**********************************************************
   /* Formatting
@@ -202,8 +204,8 @@ public class ISO8601Utils {
           char c = date.charAt(offset);
           if (c != 'Z' && c != '+' && c != '-') {
             seconds = parseInt(date, offset, offset += 2);
-            if (seconds > 59 && seconds < 63) {
-              seconds = 59; // truncate up to 3 leap seconds
+            if (seconds > MIN_SECOND && seconds < MAX_SECOND) {
+              seconds = MIN_SECOND; // truncate up to 3 leap seconds
             }
             // milliseconds can be optional in the format
             if (checkOffset(date, offset, '.')) {
