@@ -28,6 +28,8 @@ import com.google.protobuf.GeneratedMessageV3;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.management.Descriptor;
+
 public class ProtosWithPrimitiveTypesTest {
   private Gson gson;
 
@@ -45,6 +47,7 @@ public class ProtosWithPrimitiveTypesTest {
 
   @Test
   public void testSerializeEmptyProto() {
+    Descriptor descriptor = SimpleProto.getDescriptor();
     SimpleProto proto = SimpleProto.newBuilder().build();
     String json = gson.toJson(proto);
     assertEquals("{}", json);
